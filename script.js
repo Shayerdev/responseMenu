@@ -7,20 +7,15 @@ class NavResponse extends HTMLElement{
         }
         this.rootContainer = this.querySelector('.root-container') ?
             this.querySelector('.root-container') : this;
-
-
     }
     connectedCallback(){
         try {
             if(!this.rootContainer.children.length) throw 'Elements not found';
             this.observerContainer(this.rootContainer.children);
-            //this.dropMenu();
         } catch (e){
             console.error(e);
         }
     }
-
-
     get dropMenu(){
 
         const dropMenu = document.createElement('ul');
@@ -60,7 +55,7 @@ class NavResponse extends HTMLElement{
 
     observerContainer(itemsObserve){
         const self = this;
-        const observer =  new IntersectionObserver( (entries , observer) => {
+        const observer =  new IntersectionObserver( entries  => {
             entries.forEach(entry => {
                 if(entry.intersectionRatio === 1 ){
                     entry.target.classList.remove('hidden');
@@ -70,9 +65,7 @@ class NavResponse extends HTMLElement{
                     self.items.hidden.push(entry.target)
                 }
             })
-
             this.elementDrop(self.items.hidden);
-
         }, {
             root: this.rootContainer,
             threshold: 1
@@ -80,7 +73,6 @@ class NavResponse extends HTMLElement{
 
         Array.from(itemsObserve).map(item => observer.observe(item));
     }
-
 }
 
 customElements.define('nav-response', NavResponse);
