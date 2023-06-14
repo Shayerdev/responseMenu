@@ -1,0 +1,26 @@
+{
+  "name": "responsemenu",
+  "version": "1.0.0",
+  "description": "Some response Menu",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start" : "npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shayerdev/responseMenu.git"
+  },
+  "keywords": [
+    "ResponseMenu"
+  ],
+  "author": "Shayer Developer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shayerdev/responseMenu/issues"
+  },
+  "homepage": "https://github.com/Shayerdev/responseMenu#readme",
+  "devDependencies": {
+    "webpack": "^5.86.0"
+  }
+}
